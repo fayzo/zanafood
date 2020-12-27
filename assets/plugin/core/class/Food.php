@@ -1048,6 +1048,230 @@ public function agent_profile_viewProfile($user_id){ ?>
             </div>
         <?php
         }
+
+        
+        public function custtomer_reviews(){ ?>
+
+            <div class="row">
+                <div class="agent-carousel owl-carousel">
+                <?php 
+                    $mysqli= $this->database;
+                    $result =$mysqli->query("SELECT * FROM users WHERE register_as ='Agent' ");
+                    
+                    while ($user= $result->fetch_array()) {
+                ?>
+    
+                <div class="col-lg-3 single-agent">
+    
+                <!-- Profile Image -->
+                <div class="card bg-light sa-pic">
+                    <div class="card-header text-muted border-bottom-0">
+                    Customer Reviews
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-7">
+                        
+                          <h2 class="lead"><b><?php echo $user['firstname']." ".$user['lastname']; ?></b></h2>
+                          <!-- <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee Lover </p> -->
+                          <ul class="mb-0 text-muted" style="list-style-type: none;">
+                            <li class="small">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, 
+                                varius quam at, luctus dui. 
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-5 text-center single-agent-profile">
+                            <div class="sa-picz">
+                                <img src="<?php echo BASE_URL_LINK."image/img/quotations-button.png" ;?>" class="img-circle img-fluid">
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <div class="text-right">
+                            <i class="fa fa-star" style="color: #6a6f8c;" aria-hidden="true"></i>
+                            <i class="fa fa-star" style="color: #6a6f8c;" aria-hidden="true"></i>
+                            <i class="fa fa-star" style="color: #6a6f8c;" aria-hidden="true"></i>
+                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                </div>
+                </div>
+    
+            <?php  } ?>
+    
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-md-12">
+                    <div class="full review_bt_section">
+                        <div class="float-right">
+                            <a class="bt_main" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample">Leave a Review</a>
+                        </div>
+                    </div>
+
+                    <div class="full">
+
+                        <div id="collapseExample" class="full commant_box collapse">
+                            <form accept-charset="UTF-8" action="index.html" method="post">
+                                <input id="ratings-hidden" name="rating" type="hidden">
+                                
+                                <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." required=""></textarea>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required="" data-error="Please enter your name">
+                                <input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required="" data-error="Please enter your email">
+
+                                <div class="full_bt center">
+                                    <button class="bt_main" type="submit">Save</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+    
+    
+        <?php  }
+        
+        public function stuff(){ ?>
+
+            <div class="row">
+                <div class="agent-carousel owl-carousel">
+                <!-- < ?php 
+                    $mysqli= $this->database;
+                    $result =$mysqli->query("SELECT * FROM users WHERE register_as ='Agent' ");
+                    
+                    while ($user= $result->fetch_array()) {
+                ?> -->
+    
+                    <div class="col-md-12  single-agent">
+                        <div class="our-team">
+                            <div class="pic">
+                                <img src="assets/image/img/stuff/stuff-img-01.jpg">
+                                <ul class="social">
+                                    <li><a href="#" class="fa fa-facebook"></a></li>
+                                    <!-- <li><a href="#" class="fa fa-google-plus"></a></li> -->
+                                    <li><a href="#" class="fa fa-instagram"></a></li>
+                                    <li><a href="#" class="fa fa-linkedin"></a></li>
+                                </ul>
+                            </div>
+                            <div class="team-content">
+                                <h3 class="title">Williamson</h3>
+                                <span class="post">Chef Cuisine</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12  single-agent">
+                        <div class="our-team">
+                            <div class="pic">
+                                <img src="assets/image/img/stuff/stuff-img-02.jpg">
+                                <ul class="social">
+                                    <li><a href="#" class="fa fa-facebook"></a></li>
+                                    <!-- <li><a href="#" class="fa fa-google-plus"></a></li> -->
+                                    <li><a href="#" class="fa fa-instagram"></a></li>
+                                    <li><a href="#" class="fa fa-linkedin"></a></li>
+                                </ul>
+                            </div>
+                            <div class="team-content">
+                                <h3 class="title">Williamson</h3>
+                                <span class="post">Chef party</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12  single-agent">
+                        <div class="our-team">
+                            <div class="pic">
+                                <img src="assets/image/img/stuff/stuff-img-03.jpg">
+                                <ul class="social">
+                                    <li><a href="#" class="fa fa-facebook"></a></li>
+                                    <!-- <li><a href="#" class="fa fa-google-plus"></a></li> -->
+                                    <li><a href="#" class="fa fa-instagram"></a></li>
+                                    <li><a href="#" class="fa fa-linkedin"></a></li>
+                                </ul>
+                            </div>
+                            <div class="team-content">
+                                <h3 class="title">Williamson</h3>
+                                <span class="post">sous chef</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    
+    
+        <?php  }
+
+        
+      public function food_carousel()
+      {
+          $mysqli= $this->database;
+          $query= $mysqli->query("SELECT * FROM food H
+              Left JOIN provinces P ON H. province = P. provincecode
+              Left JOIN districts M ON H. districts = M. districtcode
+              Left JOIN sectors T ON H. sector = T. sectorcode
+              Left JOIN cells C ON H. cell = C. codecell
+              Left JOIN vilages V ON H. village = V. CodeVillage 
+              Left JOIN users U ON H. user_id3 = U. user_id 
+          WHERE H. approval_top = 'on' ORDER BY rand() Desc Limit 0,2");
+  
+          while ($house= $query->fetch_array()) { ?>
+  
+          <div class="single-top-properties" >
+              <div class="row">
+                  <div class="col-lg-6">
+                      <div class="stp-pic">
+                  <?php    $file = $house['photo']."=".$house['other_photo'];
+                           $expode = explode("=",$file);  ?>
+                          <img src="<?php echo BASE_URL.'uploads/food/'.$expode[0]; ?>" >
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="stp-text">
+                          <div class="s-text" style="background: #da3141;" > <?php 
+                              $subect = $house['categories_food'];
+                              $replace = " ";
+                              $searching = "_";
+                              echo str_replace($searching,$replace, $subect);
+                              ?>
+                          </div>
+                          <span class="h6 text-success text-uppercase ml-2"><?php echo $house['code']; ?></span>
+  
+                          <!-- <span class="s-text text-uppercase ml-2"> For < ?php echo $house['buy']; ?></span> -->
+                          <h2><a href="javascript:void(0)" id="food-readmore" data-food="<?php echo $house['food_id']; ?>" ><?php echo $house['code']; ?></a></h2>
+                          
+                          <div class="room-price"> 
+                              <span>From: </span>
+                              <h4><?php echo $this->nice_number(number_format($house['price'])); ?> Frw
+                              </h4>
+                              <?php if($house['price_discount'] != 0){ ?>
+                              <span class="text-danger price-change ml-2" style="text-decoration: line-through;">
+                              <?php echo number_format($house['price_discount']); ?> Frw </span> <?php } ?>
+                          </div>
+  
+                          <div class="properties-location"><i class="icon_pin"></i> 
+                              <a href="javascript:void(0)" id="food-readmore" data-food="<?php echo $house['food_id']; ?>" >
+                              <!-- < ?php echo $house['provincename']; ?> /  -->
+                              <?php echo $house['namedistrict']; ?> District/ 
+                              <?php echo $house['namesector']; ?> Sector
+                              <!-- < ?php echo $house['nameCell']; ?> Cell  -->
+                              </a>
+                          </div>
+                          <p>  <?php echo $house['text']; ?></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  
+  <?php   } 
+
+    }
+
     
 
 

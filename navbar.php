@@ -5,8 +5,23 @@
             aria-valuemax="100"></span>
     </div>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
         <div class="loader"></div>
+    </div> -->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+                <div class="object" id="object_five"></div>
+                <div class="object" id="object_six"></div>
+                <div class="object" id="object_seven"></div>
+                <div class="object" id="object_eight"></div>
+                <div class="object" id="object_big"></div>
+            </div>
+        </div>
     </div>
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
@@ -62,7 +77,7 @@
                     <div class="col-lg-3">
                             <div class="logo">
                                 <a href="<?php echo (isset($_SESSION['key_food']))? HOME:F_INDEX; ?>"> 
-                                  <img src="<?php echo BASE_URL;?>assets/image/img/partner/partner-4.png" alt="">
+                                    <img style="color:red;" src="<?php echo BASE_URL;?>assets/image/logo/logo.png" alt="">
                                 </a>
                             </div>
                     </div>

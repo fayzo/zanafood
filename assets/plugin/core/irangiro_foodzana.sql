@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2020 at 03:22 AM
+-- Generation Time: Dec 27, 2020 at 04:47 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -2755,6 +2755,7 @@ CREATE TABLE `food` (
   `categories_food` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `code` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `quantity` int(11) NOT NULL,
+  `approval_top` char(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `discount` int(11) NOT NULL,
   `price_discount` float(10,2) NOT NULL,
   `banner` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -2767,8 +2768,8 @@ CREATE TABLE `food` (
 -- Dumping data for table `food`
 --
 
-INSERT INTO `food` (`food_id`, `authors`, `photo`, `other_photo`, `video`, `youtube`, `price`, `phone`, `country01`, `photo_Title_main`, `photo_Title`, `city`, `province`, `districts`, `sector`, `cell`, `village`, `text`, `categories_food`, `code`, `quantity`, `discount`, `price_discount`, `banner`, `buy`, `user_id3`, `created_on3`) VALUES
-(30, 'shema', '2020_442019.jpg', '2020_2982019.jpg', '', '', 2000.00, '07435', 'RW', '', '=====', '', '1', '102', '1020401', '10204', '102040103', 'drinks', 'food', 'fanta', 1, 0, 0.00, '', 'available', 6, '2020-12-18 04:19:28');
+INSERT INTO `food` (`food_id`, `authors`, `photo`, `other_photo`, `video`, `youtube`, `price`, `phone`, `country01`, `photo_Title_main`, `photo_Title`, `city`, `province`, `districts`, `sector`, `cell`, `village`, `text`, `categories_food`, `code`, `quantity`, `approval_top`, `discount`, `price_discount`, `banner`, `buy`, `user_id3`, `created_on3`) VALUES
+(30, 'shema', '2020_442019.jpg', '2020_2982019.jpg', '', '', 2000.00, '07435', 'RW', '', '=====', '', '1', '102', '1020401', '10204', '102040103', 'drinks', 'food', 'fanta', 1, 'on', 0, 0.00, '', 'available', 6, '2020-12-18 04:19:28');
 
 -- --------------------------------------------------------
 
@@ -3322,7 +3323,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `email`, `username`, `register_as`, `admin`, `password`, `telephone`, `twitter`, `instagram`, `facebook`, `location`, `skills`, `notes`, `chat`, `approval`, `last_login`, `last_profile_edit`, `counts_login`, `profile_img`, `date_registry`, `forgotUsernameCounts`, `forgotUsernameCountsTimesHeCreatespassword`) VALUES
-(1, 'cliford', 'collon', 'irangiroltd@ygmail.com', 'property', 'Agent', 'admin', 'fafa', '0782822402', 'irangiroH', 'irangiro house', 'irangiro house', 'KG 534 St ,', 'Negotiation,Patience,Attentiveness,Listening,Problem-Solving,Self-Control,', 'am professional of 2years in business and am honest', 'off', 'on', '2020-12-19 11:07:49', '2020-10-23 17:49:22', 158, 'agent-4.jpg', '2020-10-03 00:00:00', 0, 0),
+(1, 'cliford', 'collon', 'irangiroltd@ygmail.com', 'property', 'Agent', 'admin', 'fafa', '0782822402', 'irangiroH', 'irangiro house', 'irangiro house', 'KG 534 St ,', 'Negotiation,Patience,Attentiveness,Listening,Problem-Solving,Self-Control,', 'am professional of 2years in business and am honest', 'on', 'on', '2020-12-21 04:50:41', '2020-10-23 17:49:22', 159, 'agent-4.jpg', '2020-10-03 00:00:00', 0, 0),
 (2, 'nathalez', 'gollan', 'house.irangiro@iragiro.com', 'muhire', 'Agent', '', 'muhire', '0730135543', 'irangiroH', 'irangirohouse', 'irangiro', 'kacyiru', 'mature,patience, control behaviour', 'profedssional 3 years', 'off', 'on', '2020-12-19 10:51:39', '2020-10-21 04:07:06', 5, 'agent-1.jpg', '2020-10-21 01:00:00', 1, 0),
 (6, 'shema', 'shema', 'shema@yahoo.com', 'shema', 'Buyer', '', 'shema', '', '', '', '', '', '', '', 'off', 'off', '2020-12-18 04:40:36', '0000-00-00 00:00:00', 6, '', '2020-12-18 00:00:00', 0, 0);
 

@@ -14,10 +14,18 @@
     /*------------------
     Preloader
     --------------------*/
+    // $(window).on('load', function () {
+    //     $(".loader").fadeOut();
+    //     $("#preloder").delay(200).fadeOut("slow");
+    // });
+
+    //for Preloader
+
     $(window).on('load', function () {
-        $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
-    });
+      // $("#loading").fadeOut(500);
+      $("#loading-center-absolute").fadeOut();
+      $("#loading").delay(200).fadeOut("slow");
+  });
 
     $(".table_adminLA").DataTable({
       "lengthChange": true,

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/login.css" >
     <link rel="stylesheet" href="<?php echo BASE_URL;?>assets/plugin/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/flaticon.css" type="text/css">
     <link rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/elegant-icons.css" type="text/css">
     <link rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/themify-icons.css" type="text/css">
     <link rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/jquery-ui.min.css" type="text/css">
