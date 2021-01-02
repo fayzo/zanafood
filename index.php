@@ -59,10 +59,14 @@
                         <!-- col -->
                     </div> 
                     <!-- row -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Recent Post</h3>
+                    </div>
+                    <div class="card-body">
 
-                    <h3>Recent Post</h3>
-                    <div class="post-box-blog">
-							<div class="recent-post-box">
+                        <div class="post-box-blog">
+                            <div class="recent-post-box">
 								<div class="recent-box-blog">
 									<div class="recent-img">
 										<img class="img-fluid" src="assets/image/img/post-img-01.jpg" alt="">
@@ -116,8 +120,11 @@
 									</div>
 								</div>
 							</div>
-						</div>
-
+                        </div>
+                    </div>
+                </div>
+                    <!-- card -->
+        
                 </div> 
                 <!-- col -->
             </div>
@@ -134,7 +141,7 @@
                 <div class="col-lg-12">
                     <div class="properties-title">
                         <div class="section-title">
-                            <span>Special Menu For You</span>
+                            <span>Special Menus</span>
                             <h2>OUR MENUS</h2>
                         </div>
                         <!-- <a href="< ?php echo (isset($_SESSION['key']))? VIEW_ALL_PROPERTY:F_VIEW_ALL_PROPERTY; ?>" class="top-property-all">View All Property</a> -->
@@ -170,7 +177,96 @@
     
 
     <!-- Top Properties Section End -->
-    <section class="agent-section" style="padding-bottom:4px">
+    <section>
+        <div class="single-top-properties p-4 bg-light" >
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="stp-pic">
+                        <img src="assets/image/img/about-06.jpg" alt="Image" width="100%" class="img-fluid tm-history-img">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="stp-text">
+
+                        <div class="tm-history-text"> 
+                            <h4 class="tm-history-title">History of our restaurant</h4>
+                            <p class="tm-mb-p">Sed ligula risus, interdum aliquet imperdiet sit amet, auctor sit amet justo. Maecenas posuere lorem id augue interdum vehicula. Praesent sed leo eget libero ultricies congue.</p>
+                            <p class="tm-mb-p">Redistributing this template as a downloadable ZIP file on any template collection site is strictly prohibited. You will need to <a href="https://templatemo.com/contact">contact TemplateMo</a> for additional permissions about our templates. Thank you.</p>
+                            <p class="tm-mb-p">Redistributing this template as a downloadable ZIP file on any template collection site is strictly prohibited. You will need to <a href="https://templatemo.com/contact">contact TemplateMo</a> for additional permissions about our templates. Thank you.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Property Section End -->
+
+    <!-- Top Properties Section End -->
+    <section>
+        <div class="single-top-properties p-4 bg-light" >
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="stp-text">
+
+                        <div class="tm-history-text"> 
+                            <h4 class="tm-history-title">Set up on dinner</h4>
+                            <p class="tm-mb-p">Sed ligula risus, interdum aliquet imperdiet sit amet, auctor sit amet justo. Maecenas posuere lorem id augue interdum vehicula. Praesent sed leo eget libero ultricies congue.</p>
+                            <p class="tm-mb-p">Redistributing this template as a downloadable ZIP file on any template collection site is strictly prohibited. You will need to <a href="https://templatemo.com/contact">contact TemplateMo</a> for additional permissions about our templates. Thank you.</p>
+                            <p class="tm-mb-p">Redistributing this template as a downloadable ZIP file on any template collection site is strictly prohibited. You will need to <a href="https://templatemo.com/contact">contact TemplateMo</a> for additional permissions about our templates. Thank you.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="stp-pic">
+                        <img src="assets/image/img/book_left_image.jpg" alt="Image" width="100%" class="img-fluid tm-history-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Property Section End -->
+
+    <!-- Top Properties Section End -->
+    <section class="bg-light">
+
+            <div class="heading">
+                 <h2>WEEKLY FEATURED FOOD</h2> 
+            </div>
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="food-item">
+                        <h2>Breakfast</h2>
+                        <img src="assets/image/img/cook_breakfast.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="food-item">
+                        <h2>Lunch</h2>
+                        <img src="assets/image/img/cook_lunch.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="food-item">
+                        <h2>Dinner</h2>
+                        <img src="assets/image/img/cook_dinner.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="food-item">
+                        <h2>Desserts</h2>
+                        <img src="assets/image/img/cook_dessert.png" alt="">
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Property Section End -->
+
+    <!-- Top Properties Section End -->
+    <section class="agent-section" style="padding-bottom:4px;background: #f8f9fa;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

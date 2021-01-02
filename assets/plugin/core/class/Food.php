@@ -26,7 +26,7 @@ class Food extends home {
                                         
                                         foreach($_SESSION["foodcart_item"] as $k => $v) {
                                             $price = $_SESSION["foodcart_item"][$k]["price"]*$_SESSION["foodcart_item"][$k]["quantitys"];
-                                            // var_dump($itemArray[$k]["house_id"],$itemArray[$k]["code"]);
+                                            // var_dump($itemArray[$k]["food_id"],$itemArray[$k]["code"]);
                                             $this->updateQuery('food_watchlist',array(
                                                 'food_id_list' => $_SESSION["foodcart_item"][$k]["food_id"], 
                                                 'user_id3_list' => $_POST["user_id"],  
@@ -44,7 +44,7 @@ class Food extends home {
         					}
         				} else {
                             foreach($itemArray as $k => $v) {
-                                // var_dump($itemArray[$k]["house_id"],$itemArray[$k]["code"]);
+                                // var_dump($itemArray[$k]["food_id"],$itemArray[$k]["code"]);
                                 $this->insertQuery('food_watchlist',array(
                                     'food_id_list' => $itemArray[$k]["food_id"], 
                                     'user_id3_list' => $_POST["user_id"],  
@@ -64,7 +64,7 @@ class Food extends home {
         				}
         			} else {
                         foreach($itemArray as $k => $v) {
-                            // var_dump($itemArray[$k]["house_id"],$itemArray[$k]["code"]);
+                            // var_dump($itemArray[$k]["food_id"],$itemArray[$k]["code"]);
                             $this->insertQuery('food_watchlist',array(
                                 'food_id_list' => $itemArray[$k]["food_id"], 
                                 'user_id3_list' => $_POST["user_id"],  
@@ -229,7 +229,8 @@ class Food extends home {
               <?php
             } else {
             ?>
-            <div class="no-records">Your Cart is Empty</div>
+             <div class="no-records"></div>
+            <!-- <div class="no-records">Your Cart is Empty</div> -->
             <?php 
             } 
     }
@@ -1139,7 +1140,7 @@ public function agent_profile_viewProfile($user_id){ ?>
         public function stuff(){ ?>
 
             <div class="row">
-                <div class="agent-carousel owl-carousel">
+                <div class="agent-carousel owl-carousel" >
                 <!-- < ?php 
                     $mysqli= $this->database;
                     $result =$mysqli->query("SELECT * FROM users WHERE register_as ='Agent' ");
@@ -1271,6 +1272,261 @@ public function agent_profile_viewProfile($user_id){ ?>
   <?php   } 
 
     }
+
+    
+    public function edit_delete_Adminfood($variable){ ?>
+
+        <table class="table table-responsive-sm table_adminLA1 table-hover ">
+            <thead class="main-active">
+                <tr>
+                    <th>N0</th>
+                    <th class="text-center">
+                        <i class="icon-people"></i>
+                    </th>
+                    <th>PRICE/food</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            <?php switch ($variable) {
+                case $variable :
+                    # code... ?>
+                    <?php 
+                            $increment= 1;
+                            $mysqli= $this->database;
+                            $result= $mysqli->query("SELECT * FROM food WHERE categories_food= '$variable' ");
+                        if ($result->num_rows > 0) {
+                            while($row= $result->fetch_array()){ ?>
+                        <tr id="food_n<?php echo $row['food_id']; ?>">
+                            <td><?php echo  $increment++ ; ?></td>
+                            <td class="text-center">
+                                <div class="avatar">
+                                    <?php
+                                    $file = $row['photo'];
+                                    $expode = explode("=",$file);  ?>
+                                    <img class="img-avatar" width="80px" 
+                                        src="<?php echo BASE_URL.'uploads/food/'.$expode[0]; ?>" alt="">
+                                </div>
+                            </td>
+                            <td>
+                                <div><?php echo number_format($row['price']); ?> Frw 
+                                    </div>
+                                    <div> <?php echo $this->buychangesColor($row['buy']); ?></div>
+                                    <?php if($row['price_discount'] != 0){ ?>
+                                    <div class="text-danger price-change" style="text-decoration: line-through;">
+                                        <?php echo number_format($row['price_discount']); ?> Frw 
+                                    </div> 
+                                <?php } ?>
+                                <?php 
+                                    $subect = $row['categories_food'];
+                                    $replace = " ";
+                                    $searching = "_";
+                                    echo str_replace($searching,$replace, $subect);
+                                ?>
+                                <div class="text-danger price-change"><?php echo $row['code']; ?></div>
+                               <div>Approval: <span id="approvalHouse<?php echo $row["food_id"] ;?>"><?php echo $row["approval_top"];?></span></div> 
+                            </td>
+                            <td>
+                                <input type="button" onclick="viewOReditHouses(<?php echo $row['food_id'];?>, 'EditHouseAdmin')" value="Edit" class="btn btn-primary">
+                                <input type="button" id="food-readmore" data-food="<?php echo $row['food_id']; ?>" value="View" class="btn">
+                                <input type="button" onclick="deleteRow(<?php echo $row['food_id'];?>,'deleteRowHouse')" value="Delete" class="btn btn-danger">
+                                <input type="button" onclick="approvedHouses(<?php echo $row['food_id'];?>, 'off')" value="off" class="btn btn-warning btn-sm ">
+                                <input type="button" onclick="approvedHouses(<?php echo $row['food_id'];?>, 'on')" value="on" class="btn btn-success btn-sm">
+                            </td>
+                        </tr>
+                <?php 
+                     } }else{ 
+                       # code...  ?>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>No record</td>
+                            <td></td>
+                        </tr>
+                    <?php    }
+                break;
+            } ?>
+                    </tbody>
+                </table>
+
+<?php   }
+
+
+public function Message_activities(){ ?>
+
+    <table class="table  table-responsive-sm table_adminLA3 table-hover">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>lastname</th>
+                <th>email/phone</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+
+    <?php 
+    
+    $increment= 1;
+    $mysqli = $this->database;
+    $sql=  $mysqli->query("SELECT * FROM business_message ORDER BY datetime DESC");
+    if ($sql->num_rows > 0) {
+
+        while ($row = $sql->fetch_array()) {
+                # code...
+           
+            ?>
+                <tr id="name_msg<?php echo $row['message_id']; ?>">
+
+                    <td><?php echo  $increment++ ; ?></td>
+                    <td><?php echo $row['name_client']; ?></td>
+                    <td>
+                        <?php echo $row['email_client']; ?> |
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i> 
+                        <div> <?php echo $row['phone_client']; ?></div>
+                    </td>
+                    <td><div><?php echo $this->timeAgo($row['datetime']); ?></div>
+                        <input type="button" onclick="business_msg(<?php echo $row['message_id'];?>, 'business_message_view')" value="View" class="btn">
+                        <input type="button" onclick="deleteRowHouse(<?php echo $row['message_id'];?>, 'business_message_delete')" value="Delete" class="btn btn-danger">
+                    </td>
+                </tr>
+    <?php
+          } }else{
+            # code...  ?>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>No record</td>
+                <td></td>
+            </tr>
+            
+    <?php } ?>
+       
+    </tbody>
+</table>
+
+<?php   }
+
+
+public function Message_sentToAgentAdmin(){ ?>
+
+    <table class="table  table-responsive-sm table_adminLA5 table-hover">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>House</th>
+                <th>name</th>
+                <th>email/phone</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+
+    <?php 
+    
+    $increment= 1;
+    $mysqli = $this->database;
+    $sql=  $mysqli->query("SELECT * FROM agent_message  A 
+    LEFT JOIN food H ON A. house_id_msg = H. food_id ORDER BY datetime DESC");
+    if ($sql->num_rows > 0) {
+
+        while ($row = $sql->fetch_array()) {
+                # code...
+           
+            ?>
+                <tr id="agent_msg<?php echo $row['message_id']; ?>">
+
+                    <td><?php echo  $increment++ ; ?></td>
+                    <td class="text-center">
+                        <div class="avatar">
+                            <?php
+                            $file = $row['photo'];
+                            $expode = explode("=",$file);  ?>
+                            <img class="img-avatar" width="80px" 
+                                src="<?php echo BASE_URL.'uploads/food/'.$expode[0]; ?>" alt="">
+                        </div>
+                    </td>
+                    <td><?php echo $row['name_client']; ?></td>
+                    <td>
+                        <?php echo $row['email_client']; ?> |
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i> 
+                        <div> <?php echo $row['phone_client']; ?></div>
+                    </td>
+                    <td><div><?php echo $this->timeAgo($row['datetime']); ?></div>
+                        <input type="button" onclick="business_msg(<?php echo $row['message_id'];?>, 'agent_message_view')" value="View" class="btn">
+                        <input type="button" onclick="deleteRowHouse(<?php echo $row['message_id'];?>, 'agent_message_delete')" value="Delete" class="btn btn-danger">
+                    </td>
+                </tr>
+    <?php
+          } }else{
+            # code...  ?>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>No record</td>
+                <td></td>
+            </tr>
+            
+    <?php } ?>
+       
+    </tbody>
+</table>
+
+<?php   }
+
+
+public function newsletter_subscribe(){ ?>
+
+    <table class="table  table-responsive-sm table_adminLA4 table-hover">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Email</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+
+    <?php 
+    
+    $increment= 1;
+    $mysqli = $this->database;
+    $sql=  $mysqli->query("SELECT * FROM client_subscribe_email ORDER BY datetime DESC");
+   
+    if ($sql->num_rows > 0) {
+
+        while ($row = $sql->fetch_array()) {
+                # code...
+            ?>
+                <tr id="name_subscribe<?php echo $row['client_subscribe_id']; ?>">
+
+                    <td><?php echo  $increment++ ; ?></td>
+                    <td>
+                        <?php echo $row['email_subscribe']; ?> |
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i> 
+                    </td>
+                    <td><div><?php echo $this->timeAgo($row['datetime']); ?></div>
+                        <input type="button" onclick="deleteRowHouse(<?php echo $row['client_subscribe_id'];?>,'client_subscribe_delete')" value="Delete" class="btn btn-danger">
+                    </td>
+                </tr>
+    <?php
+        } }else{
+
+            # code...  ?>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>No record</td>
+                <td></td>
+            </tr>
+    <?php } ?>
+
+    </tbody>
+</table>
+
+<?php   }
+
 
     
 

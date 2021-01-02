@@ -280,37 +280,25 @@
                                 </button>
                             </div>
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link  active" href="#House_For_sale"
-                                    data-toggle="tab">House For sale
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('House_For_sale');?></span>
+                                <li class="nav-item"><a class="nav-link  active" href="#food"
+                                    data-toggle="tab">food
+                                    <span class="badge badge-primary"><?php echo $food->foodcountPOSTS('food');?></span>
                                 </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#House_For_rent"
-                                    data-toggle="tab">House For rent
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('House_For_rent');?></span>
+                                <li class="nav-item"><a class="nav-link" href="#drink"
+                                    data-toggle="tab">drink
+                                    <span class="badge badge-primary"><?php echo $food->foodcountPOSTS('drink');?></span>
                                 </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#apartment_For_rent"
-                                    data-toggle="tab">apartment For rent
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('apartment_For_rent');?></span>
+                                <li class="nav-item"><a class="nav-link" href="#fruits"
+                                    data-toggle="tab">fruits
+                                    <span class="badge badge-primary"><?php echo $food->foodcountPOSTS('fruits');?></span>
                                 </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#apartment_For_sale"
-                                    data-toggle="tab">apartment For sale
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('apartment_For_sale');?></span>
+                                <li class="nav-item"><a class="nav-link" href="#vegetables"
+                                    data-toggle="tab">vegetables
+                                    <span class="badge badge-primary"><?php echo $food->foodcountPOSTS('vegetables');?></span>
                                 </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#Land_For_sale"
-                                    data-toggle="tab">Plot&Land
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('Land_For_sale');?></span>
-                                </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#Office"
-                                    data-toggle="tab">Office
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('Offices_For_rent');?></span>
-                                </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#room"
-                                    data-toggle="tab">room
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('room_For_rent');?></span>
-                                </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#Commerce"
-                                    data-toggle="tab">Commerce
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('commerce_For_rent');?></span>
+                                <li class="nav-item"><a class="nav-link" href="#macedone"
+                                    data-toggle="tab">macedone
+                                    <span class="badge badge-primary"><?php echo $food->foodcountPOSTS('macedone');?></span>
                                 </a></li>
                             </ul>
                             <!-- </div> -->
@@ -318,32 +306,20 @@
                         <div class="card-body">
                             <div id="responseHouseD"></div>
                             <div class="tab-content">
-                                <div class="tab-pane active " id="House_For_sale">
-                                    <?php echo $house->edit_delete_Adminproperty('House_For_sale'); ?>
+                                <div class="tab-pane active " id="food">
+                                    <?php echo $food->edit_delete_Adminfood('food'); ?>
                                 </div> 
-                                <div class="tab-pane" id="House_For_rent">
-                                    <?php echo $house->edit_delete_Adminproperty('House_For_rent'); ?>
+                                <div class="tab-pane" id="drink">
+                                    <?php echo $food->edit_delete_Adminfood('drink'); ?>
                                 </div>
-                                <div class="tab-pane" id="apartment_For_rent">
-                                <?php echo $house->edit_delete_Adminproperty('apartment_For_rent'); ?>
+                                <div class="tab-pane" id="fruits">
+                                <?php echo $food->edit_delete_Adminfood('fruits'); ?>
                                 </div>
-                                <div class="tab-pane" id="apartment_For_sale">
-                                <?php echo $house->edit_delete_Adminproperty('apartment_For_sale'); ?>
+                                <div class="tab-pane" id="vegetables">
+                                <?php echo $food->edit_delete_Adminfood('vegetables'); ?>
                                 </div>
-                                <div class="tab-pane" id="apartment_For_rent">
-                                <?php echo $house->edit_delete_Adminproperty('apartment_For_rent'); ?>
-                                </div>
-                                <div class="tab-pane" id="Land_For_sale">
-                                <?php echo $house->edit_delete_Adminproperty('Land_For_sale'); ?>
-                                </div>
-                                <div class="tab-pane" id="Office">
-                                <?php echo $house->edit_delete_Adminproperty('Offices_For_rent'); ?>
-                                </div>
-                                <div class="tab-pane" id="room">
-                                <?php echo $house->edit_delete_Adminproperty('room_For_rent'); ?>
-                                </div>
-                                <div class="tab-pane" id="Commerce">
-                                <?php echo $house->edit_delete_Adminproperty('commerce_For_rent'); ?>
+                                <div class="tab-pane" id="macedone">
+                                <?php echo $food->edit_delete_Adminfood('macedone'); ?>
                                 </div>
                             </div> <!-- /.tab-content -->
                         </div>
@@ -351,22 +327,22 @@
                             <nav class="main-menu">
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)">Total Property Sold
-                                        <span class="badge badge-primary"> <?php echo $users->countPost_sold(); ?></span>
+                                        <a href="javascript:void(0)">Total food
+                                        <span class="badge badge-primary"> <?php echo $users->countPost_food(); ?></span>
                                     </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">Total Property rent
-                                        <span class="badge badge-primary"><?php echo $users->countPost_rent(); ?></span>
+                                        <a href="javascript:void(0)">Total beverage
+                                        <span class="badge badge-primary"><?php echo $users->countPost_beverage(); ?></span>
                                     </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">Total Property sale
-                                        <span class="badge badge-primary"> <?php echo $users->countPost_sale(); ?></span>
+                                        <a href="javascript:void(0)">Total fruits
+                                        <span class="badge badge-primary"> <?php echo $users->countPost_fruits(); ?></span>
                                     </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">Total property
+                                        <a href="javascript:void(0)">Total all food
                                         <span class="badge badge-primary"> <?php echo $users->countPOSTS(); ?></span>
                                     </a>
                                     </li>
@@ -392,7 +368,7 @@
                         <div class="card-body">
                         <div class="tab-content">
                                 <div class="tab-pane active " id="Sale">
-                                    <?php echo $house->Message_activities(); ?>
+                                    <?php echo $food->Message_activities(); ?>
                                 </div> 
                             </div> <!-- /.tab-content -->
                         </div>
@@ -418,7 +394,7 @@
                         <div class="card-body">
                         <div class="tab-content">
                                 <div class="tab-pane active " id="Sale">
-                                    <?php echo $house->Message_sentToAgentAdmin(); ?>
+                                    <?php echo $food->Message_sentToAgentAdmin(); ?>
                                 </div> 
                             </div> <!-- /.tab-content -->
                         </div>
@@ -429,7 +405,7 @@
 
                     <h4 class="display-5 mb-2 text-center">REQUEST FOR ANYTYPE OF HOUSE From Contacts </h4>
                     
-                    <div class="card  mb-3">
+                    <!-- <div class="card  mb-3">
                         <div class="card-header">
                             <div class="card-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -439,19 +415,19 @@
                                     <li class="nav-item"><a class="nav-link  active" href="#Sale"
                                         data-toggle="tab">REQUEST FOR HOUSE</a> </li>
                             </ul>
-                             <!-- /.card-tools -->
+                             /.card-tools
                         </div>
                         <div class="card-body">
                         <div class="tab-content">
                                 <div class="tab-pane active " id="Sale">
-                                    <?php echo $house->client_request_anyHouse(); ?>
+                                    < ?php echo $food->client_request_anyHouse(); ?>
                                 </div> 
-                            </div> <!-- /.tab-content -->
+                            </div> /.tab-content
                         </div>
                         <div class="card-footer text-muted">
                             Footer
                         </div>
-                    </div>
+                    </div> -->
 
                     <h4 class="display-5 mb-2 text-center">Newsletter For Subscribe </h4>
                     
@@ -470,7 +446,7 @@
                         <div class="card-body">
                         <div class="tab-content">
                                 <div class="tab-pane active " id="newsletter">
-                                    <?php echo $house->newsletter_subscribe(); ?>
+                                    <?php echo $food->newsletter_subscribe(); ?>
                                 </div> 
                             </div> <!-- /.tab-content -->
                         </div>
@@ -483,9 +459,9 @@
 
                 
                 <div class="col-lg-6 col-sm-12">
-                <h4 class="display-5 mb-2 text-center">HOUSE ENQUIRE BY CLIENTS</h4>
-                    <?php echo $house->propertyView_HomeAdmin('House_For_sale',1,$user_id); ?>
-                    <?php echo $house->houseListHome('House_For_sale',1,$user_id); ?>
+                <h4 class="display-5 mb-2 text-center">FOOD ENQUIRE BY CLIENTS</h4>
+                    <?php echo $food->property_navListHome('food',1,$user_id); ?>
+                    <?php echo $food->foodList('food',1,$user_id); ?>
                 </div>
 
             </div>

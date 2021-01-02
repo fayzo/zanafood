@@ -1858,7 +1858,6 @@ class House extends Home {
             </div>
          </div>
 
-
     <?php  }
 
         public function agent_profile_viewProfile(){ ?>

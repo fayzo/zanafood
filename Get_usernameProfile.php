@@ -5,7 +5,7 @@ if (isset($_GET['username']) == true && empty($_GET['username']) == false) {
     # code...
     $username= $users->test_input($_GET['username']);
     $uprofileId= $home->usersNameId($username);
-	$profileData= $home->userData($uprofileId['user_id']);
+    $profileData= $home->userData($uprofileId['user_id']);
 
    	if ($users->loggedin() == true) {
         $user_id= $_SESSION['key_food'];

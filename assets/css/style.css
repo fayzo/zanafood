@@ -3203,3 +3203,53 @@ a[aria-expanded="true"] {
     margin: 0;
     padding: 0;
 }
+
+/* CARD HISTORY RESTAURANT */
+.tm-history-title {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #1A6692;
+    margin-bottom: 20px;
+}
+.tm-mb-p {
+	margin-bottom: 20px;
+	font-size: 17px;
+}
+p, address {
+    color: #626364;
+}
+
+.food-item {
+    background-color: #f2f6ff;
+	padding: 30px;
+	text-align: center;
+}
+.heading h2 {
+    text-align: center;
+    padding-top:  40px;
+    margin-bottom: 80px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #121212;
+}
+.food-item img {
+    /* width: 100%; */
+    overflow: hidden;
+    position: relative;
+}
+.food-item h2 {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    padding-bottom: 8px;
+    font-family: 'Spectral', serif;
+    font-size: 28px;
+    width: 100%;
+    border-bottom: 1px solid #d9dde5;
+    color: #121212;
+}
+.food-item .text-content {
+    background-color: #fff;
+    padding: 20px 20px 10px 20px;
+}
